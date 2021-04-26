@@ -35,7 +35,7 @@ public class EmployeePayrollServiceTest {
 
    //TEST CASE 3
    @Test
-	public void employeePayrollCheck()
+	public void employeePayrollCheck3()
 	{
 		EmployeePayrollData[] arrayOfEmps = {
 				new EmployeePayrollData(1,"Jeff Bezos",10000.0),
@@ -47,6 +47,15 @@ public class EmployeePayrollServiceTest {
 		employeePayrollService.writeEmployeePayrollData(EmployeePayrollService.IOService.FILE_IO);
 		employeePayrollService.printData(EmployeePayrollService.IOService.FILE_IO);
 		long entries = employeePayrollService.countEntries(EmployeePayrollService.IOService.FILE_IO);
+		Assert.assertEquals(3,entries);
+	}
+
+   //TEST CASE 4
+   @Test
+	public void employeePayrollCheck4()
+	{
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		long entries = employeePayrollService.readEmployeePayrollData(EmployeePayrollService.IOService.FILE_IO);
 		Assert.assertEquals(3,entries);
 	}
 }
