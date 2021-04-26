@@ -41,5 +41,11 @@ public class EmployeePayrollService {
 		else if(ioService.equals(EmployeePayrollService.IOService.FILE_IO))
 			new EmployeePayrollFileIOService().writeData(employeePayrollList);
 	}
+
+   public void printData(IOService ioService)
+	{
+		if(ioService.equals(IOService.FILE_IO))
+			new EmployeePayrollFileIOService().printData();
+	}
 }
 
